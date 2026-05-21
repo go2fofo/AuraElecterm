@@ -1,220 +1,219 @@
-<h1 align="center" style="padding-top: 60px;padding-bottom: 40px;">
-    <a href="https://electerm.html5beta.com">
-        <img src="https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png", alt="" />
-    </a>
-</h1>
+# AuraElecterm (AuraTerm)
 
-# electerm [![Tweet](https://badgers.space/badge/Tweet/Tweet/social)](https://twitter.com/intent/tweet?text=Open%20sourced%20terminal%2Fssh%2Fsftp%20client(linux%2C%20mac%2C%20win)&url=https%3A%2F%2Fgithub.com%2Felecterm%2Felecterm&hashtags=electerm,ssh,terminal,sftp)
+> **本项目为** **[electerm](https://github.com/electerm/electerm)** **的高颜值 UI 样式重构版。**
+>
+> 在完全保留原项目强大的终端、SSH、SFTP 等核心功能的基础上，专注于界面视觉进化、现代 UI 体验以及优雅主题的重塑。
+> 本项目基于 **MIT 协议** 开源，并对原作者 [Zhaoxudong (electerm)](https://github.com/electerm) 致以最高敬意。
 
-[![GitHub version](https://badgers.space/github/release/electerm/electerm?corner_radius=m)](https://github.com/electerm/electerm/releases)
-[![Build Status](https://github.com/electerm/electerm/actions/workflows/mac-test-1.yml/badge.svg)](https://github.com/electerm/electerm/actions)
-[![license](https://img.shields.io/github/license/electerm/electerm)](https://github.com/electerm/electerm/blob/master/LICENSE)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Get it from the Snap Store](https://img.shields.io/badge/Snap-Store-green)](https://snapcraft.io/electerm)
-[![Get it from the Microsoft Store](https://img.shields.io/badge/Microsoft-Store-blue)](https://www.microsoft.com/store/apps/9NCN7272GTFF)
-[![Debian Repository](https://img.shields.io/badge/Debian-Repository-red)](https://electerm-repos.html5beta.com/deb)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/electerm?label=Sponsors)](https://github.com/sponsors/electerm)
-[![Powered by manate](https://img.shields.io/badge/Powered%20by-manate-blue)](https://github.com/tylerlong/manate)
-[![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord)](https://discord.gg/855W7g8EVd)
-[![star](https://atomgit.com/electerm/electerm/star/badge.svg)](https://atomgit.com/electerm/electerm)
+***
 
-[![English](https://img.shields.io/badge/English-EN-blue)](README.md) [![中文](https://img.shields.io/badge/中文-Chinese-blue)](README_cn.md)
+开源终端 / SSH / Telnet / Serialport / RDP / VNC / Spice / SFTP / FTP 客户端（跨平台支持 Linux, macOS, Windows）。
 
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=c10bcb28b846&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+## 重构核心亮点
 
-[![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)](https://vercel.com/oss)
+- **视觉重塑**：引入现代前端视觉规范，优化布局间距、圆角与呼吸感阴影。
+- **主题进化**：重构深色/浅色模式的色彩微调，带来更高级的极客审美。
+- **原生对齐**：完美继承原版 AI 助手与 MCP 组件，颜值与生产力兼得。
 
-Open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client(linux, mac, win).
+***
 
-For experienced developers, you may try the web app version running in browser(including mobile device): [electerm-web](https://github.com/electerm/electerm-web) or [docker image for electerm-web](https://github.com/electerm/electerm-web-docker)
+## 功能特性
 
-Online demo: [https://electerm-demo.html5beta.com](https://electerm-demo.html5beta.com)
+- **多协议支持**：支持 SSH, Telnet, Serialport, RDP, VNC, Spice，集成本地和远程文件管理，提供高效的 SFTP/FTP 文件传输，亦可作为本地终端使用。
+- **全平台覆盖**：支持 Windows 7+ (X64/ARM64), macOS 10.15+ (X64/ARM64), Linux (X64/ARM64/Loong64)，以及基于 glibc 2.17+ 的 Linux 发行版（如 UOS 统信、Kylin 麒麟、Ubuntu 18.04 等）。
+- **Guake 模式**：支持全局快捷键切换隐藏/显示窗口（默认快捷键 `Ctrl + 2`）。
+- **国际化**：支持 🇺🇸 🇨🇳 🇧🇷 🇷🇺 🇪🇸 🇫🇷 🇹🇷 🇭🇰 🇯🇵 🇸🇦 🇩🇪 🇰🇷 🇮🇩 🇵🇱 等多国语言（由 [electerm-locales](https://github.com/electerm/electerm-locales) 驱动）。
+- **极客效率**：
+  - 双击直接编辑远程文件。
+  - 支持密码及 SSH 密钥登录。
+  - 内置 Zmodem (`rz`, `sz`) 支持。
+  - 支持 SSH 隧道管理。
+  - 支持 [Trzsz](https://github.com/trzsz/trzsz) (`trz`/`tsz`)，兼容 tmux。
+  - 快速输入命令同步分发到一个或多个终端。
+  - 支持命令行调用（详见 [Wiki](https://github.com/electerm/electerm/wiki/Command-line-usage)）。
+- **个性化定制**：支持窗口毛玻璃透明（macOS, Windows）、自定义终端背景图片、全功能主题更换以及代理服务器设置。
+- **云端同步**：支持将书签等数据同步至 GitHub/Gitee 私人 Gist、WebDAV、自定义服务器或 Electerm 官方云。
+- **深度链接 (Deep Link)**：支持通过 `telnet://192.168.2.31:34554` 或 `ssh://user@host:22` 等 URL 唤起客户端直接打开连接（详见 [深度链接支持 Wiki](https://github.com/electerm/electerm/wiki/Deep-link-support)）。
+- \*\* 智能化集成\*\*：
+  - **AI 助手**：深度集成 AI 能力（支持 DeepSeek、OpenAI 等主流 API），协助进行命令建议、脚本编写，并能一键解释所选终端文本。
+  - **MCP 组件**：内置 Model Context Protocol (MCP) 组件，用于 AI 助手与外部工具链的深度协同（详见 [MCP 挂件使用指南](https://github.com/electerm/electerm/wiki/MCP-Widget-Usage-Guide)）。
 
-## Atlas Cloud
+***
 
-<div align="center">
-  <a href="https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=electerm">
-    <img src="https://github.com/electerm/electerm-resource/blob/master/static/images/atlas-cloud.png?raw=true" alt="Atlas Cloud" width="200" />
-  </a>
-</div>
+## 官方原版安装路径
 
-[Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=electerm) provides OpenAI-compatible AI APIs and model access for AI-powered workflows in electerm.
+如果你需要使用官方原版稳定编译包，可以通过以下渠道：
 
-<div align="center">
-  <img src="https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif", alt="" />
-</div>
+- **macOS 用户**：`brew install --cask electerm`
+- **Linux Snap**：`sudo snap install electerm --classic`
+- **Linux 软件商店**：广泛内置于 Ubuntu, Deepin, Mint 等发行版商店中。
+- **绿色版**：不支持 `rpm`, `deb` 或 `snap` 的 Linux 发行版可直接解压 `tar.gz` 版本使用。
 
-## Features
+***
 
-- Works as a terminal/file manager or ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client
-- Support Window 7+(X64/ARM64), Mac OS 10.15+(x64/arm64), Linux(x64/arm64/Loong64), even old Linux with glibc 2.17+ like UOS/Kylin/Ubuntu 18.04 etc
-- Global hotkey to toggle window visibility (similar to guake, default is `ctrl + 2`)
-- Multi platform(linux, mac, win)
-- 🇺🇸 🇨🇳 🇧🇷 🇷🇺 🇪🇸 🇫🇷 🇹🇷 🇭🇰 🇯🇵 🇸🇦 🇩🇪 🇰🇷 🇮🇩 🇵🇱 Multi-language support([electerm-locales](https://github.com/electerm/electerm-locales), contributions/fixes welcome)
-- Double click to directly edit (small) remote files.
-- Auth with publicKey + password.
-- Support Zmodem(rz, sz).
-- Support ssh tunnel.
-- Support [Trzsz](https://github.com/trzsz/trzsz)(trz/tsz), similar to rz/sz, and compatible with tmux.
-- Transparent window(Mac, win).
-- Terminal background image.
-- Global/session proxy.
-- Quick commands
-- UI/terminal theme
-- Sync bookmarks/themes/quick commands to github/gitee secret gist/webdav/custom server/electerm cloud
-- Quick input to one or all terminals.
-- AI assistant integration (supporting [DeepSeek](https://www.deepseek.com), OpenAI, and other AI APIs) to help with command suggestions, script writing, and explaining selected terminal content
-- MCP (Model Context Protocol) widget for AI assistants and external tools integration - see [MCP Widget Usage Guide](https://github.com/electerm/electerm/wiki/MCP-Widget-Usage-Guide)
-- Deep link support: Open connections with URLs like `telnet://192.168.2.31:34554` or `ssh://user@host:22` - see [Deep link support wiki](https://github.com/electerm/electerm/wiki/Deep-link-support)
-- Command line usage: check [wiki](https://github.com/electerm/electerm/wiki/Command-line-usage)
+## 调试与开发环境
 
-## Download
+项目推荐使用 `fnm` (Fast Node Manager) 来管理 Node.js 版本。
 
-- [Homepage](https://electerm.html5beta.com)
-- [sourceforge](https://sourceforge.net/projects/electerm.mirror/files/)
-- [github releases](https://github.com/electerm/electerm/releases)
+> ⚠️ **运行前提**：
+>
+> 1. 本项目必须使用 **Node.js 24.x** 版本。
+> 2. 原项目脚本基于 Linux 环境编写。若在 **macOS** 上运行，请确保已安装 Xcode 命令行工具 (`xcode-select --install`)，并配置国内镜像源以防 Electron 壳子下载失败。
 
-## Install
-
-- For Mac user: `brew install --cask electerm`
-- With snap: `sudo snap install electerm --classic`
-- For some Linux distribution, you can find it from OS default App store(Ubuntu, Deepin, Mint...).
-- For some linux OS, the `rpm`, `deb`, or `snap` release may not work, you can try the `tar.gz` or `.appImage` release.
-- For Windows users, you can install it from [windows store](https://www.microsoft.com/store/apps/9NCN7272GTFF), command-line installer [winget](https://github.com/microsoft/winget-cli) and [scoop](https://github.com/lukesampson/scoop) is also recommended:
-
-```powershell
-# winget https://github.com/microsoft/winget-cli
-winget install electerm.electerm
-
-# scoop https://github.com/lukesampson/scoop
-scoop bucket add dorado https://github.com/chawyehsu/dorado
-scoop install dorado/electerm
-```
-
-- Install from Debian repository (for Debian/Ubuntu-based systems) with `apt` command
-
-Check [https://electerm-repos.html5beta.com/deb](https://electerm-repos.html5beta.com/deb)
-
-- Install from npm
+### 国内网络优化（Electron 镜像配置）
 
 ```bash
-npm i -g electerm
-
-```
-
-## Upgrade
-
-- Auto upgrade: When a new version is released, you will get an upgrade notification after you start electerm again. You can then click the upgrade button to upgrade.
-- Download: Just download the latest edition, reinstall.
-- Npm: If you install from npm, just run `npm i -g electerm` again.
-- If use Snap or some other distribution system, these systems may provide upgrades.
-
-## Known issues
-
-[https://github.com/electerm/electerm/wiki/Know-issues](https://github.com/electerm/electerm/wiki/Know-issues)
-
-## Troubleshoot
-
-[https://github.com/electerm/electerm/wiki/Troubleshoot](https://github.com/electerm/electerm/wiki/Troubleshoot)
-
-## Discussion
-
-[![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord)](https://discord.gg/855W7g8EVd)
-
-[Discussion board](https://github.com/electerm/electerm/discussions)
-
-![electerm-wechat-group-qr.jpg](https://electerm.html5beta.com/electerm-wechat-group-qr.jpg)
-
-## Support
-
-Would love to hear from you, please tell me what you think, [submit an issue](https://github.com/electerm/electerm/issues), [Start a new discussion](https://github.com/electerm/electerm/discussions/new), [create/fix language files](https://github.com/electerm/electerm-locales) or create pull requests, all welcome.
-
-## Sponsor this project
-
-github sponsor
-
-[https://github.com/sponsors/electerm](https://github.com/sponsors/electerm)
-
-kofi
-
-[https://ko-fi.com/zhaoxudong](https://ko-fi.com/zhaoxudong)
-
-wechat donate
-
-[![wechat donate](https://electerm.html5beta.com/electerm-wechat-donate.png)](https://github.com/electerm)
-
-## Dev
-
-```bash
-# May only works in Linux
-# needs nodejs/npm, suggest using nvm to install nodejs/npm
-# with nodejs 24.x
-
-git clone git@github.com:electerm/electerm.git
-cd electerm
 npm config set legacy-peer-deps true
+npm config set electron_mirror "[https://npmmirror.com/mirrors/electron/](https://npmmirror.com/mirrors/electron/)"
+
+```
+
+### 开发环境运行
+
+```bash
+# 1. 克隆并安装依赖
+git clone git@github.com:your-username/AuraElecterm.git
+cd AuraElecterm
 npm i
 
-# start vite dev server, requires port 5570
+# 2. 启动 Vite 本地开发服务器（占用 5570 端口）
 npm start
 
-# in a separate terminal session run app
+# 3. 在另一个独立的终端会话中，运行 Electron 客户端应用程序
 npm run app
 
-# code format check
-npm run lint
-
-# code format fix
-npm run fix
 ```
 
-## Test
+### 代码质量规范
 
 ```bash
+# 代码格式检查
+npm run lint
+
+# 代码格式自动修复
+npm run fix
+
+```
+
+***
+
+## 自动化测试
+
+```bash
+# 编译并准备测试环境
 npm run b
 npm run prepare-test
 cp .sample.env .env
 
-# edit .env, fill your test host/username/password, may only works in mac OS
+# 编辑 .env 文件，填入你的测试机 IP/用户名/密码（测试环境建议在 macOS 下运行）
 npm run test
+
 ```
 
-## Test build
+***
+
+## 生产环境构建
+
+### 构建 macOS 版本
 
 ```bash
-# May only works in Linux
-# Install yarn first(to do yarn autoclean)
-# See https://yarnpkg.com/en/docs/install
-
-# Build linux only with -l
+# 构建前确保已全局安装 yarn（由于依赖 yarn autoclean 优化体积）
 npm i
 npm run b
-npm run pb
-./node_modules/.bin/electron-builder --linux tar.gz
-# or replace tar.gz to rpm/deb/AppImage
-# check dist/ folder
+# 构建 macOS 版本
+./node_modules/.bin/electron-builder --mac
+# 解决超时问题，单次打包一次性
+ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/" ./node_modules/.bin/electron-builder --mac
+# 产物请检查 dist/ 目录
 
-# build for linux arm/
-./node_modules/.bin/electron-builder --linux --arm64
 ```
 
-## Video guide
 
-- [https://electerm.html5beta.com/videos](https://electerm.html5beta.com/videos)
+### Mac 环境下 Electron-Builder 离线打包与组件缓存指南
 
-## Change log
+在 macOS (Apple Silicon / Intel) 环境下使用 `electron-builder` 打包输出 `.dmg` 格式时，通常需要动态下载依赖的底层构建工具 `dmg-builder`。在内网、无网或国内镜像源（如阿里 npmmirror）文件缺失的环境下，常遇到以下连环阻碍：
+1. **404 错误**：国内各大镜像源上缺失某些特定版本的 `dmg-builder-bundle` 压缩包。
+2. **协议不支持**：`electron-builder` 底层下载库不支持 `ELECTRON_BUILDER_BINARIES_MIRROR="file://..."` 这种本地文件协议。
+3. **哈希校验失败**：即使通过本地网络成功喂给它压缩包，也会因为版本差异或内置硬编码导致 `checksum did not match` 的报错。
 
-Visit [Releases](https://github.com/electerm/electerm/releases).
+为了彻底绕过网络下载和哈希校验阶段，可采用 —— 直接将构建工具解压至 macOS 的全局缓存目录中。
 
-## Contact author
+---
 
-[zxdong@gmail.com](mailto:zxdong@gmail.com)
+### 离线缓存离线步骤
+
+当打包日志卡在以下位置并报错时：
+• downloading     release=dmg-builder@1.2.0 file=dmgbuild-bundle-arm64-75c8a6c.tar.gz
+⨯ Generated checksum for "dmgbuild-bundle-arm64-75c8a6c.tar.gz" did not match expected checksum.
+请按照以下两步手动注入缓存，即可直接跳过网络检测：
+1. 准备离线依赖包
+确保你本地或通过其他渠道已下载好对应的压缩包：
+
+包名示例：dmgbuild-bundle-arm64-75c8a6c.tar.gz
+
+对应组件与版本：dmg-builder 版本的 1.2.0 版本
+（https://github.com/electron-userland/electron-builder-binaries）下载
+2. 注入全局缓存 (macOS)
+打开终端，执行以下命令。它会创建 electron-builder 专用的本地缓存目录，并将你准备好的压缩包直接解压进去：
+```bash
+# 创建目标的本地缓存版本目录
+mkdir -p ~/Library/Caches/electron-builder/v2/dmg-builder/dmg-builder-1.2.0
+
+# 将你的压缩包解压到刚才创建的缓存目录中 (请根据实际情况替换下方的压缩包路径)
+tar -zxvf ./build-binaries/dmgbuild-bundle-arm64-75c8a6c.tar.gz -C ~/Library/Caches/electron-builder/v2/dmg-builder/dmg-builder-1.2.0
+```
+3. 执行纯净打包
+缓存注入成功后，electron-builder 在运行时会优先检索该缓存目录。一旦发现文件已存在，它将完全跳过网络请求与哈希校验流程。
+
+现在可以移除任何临时配置的镜像环境变量，执行最纯净的本地打包命令：
+
+```bash
+WORKFLOW_NAME="Aura" ./node_modules/.bin/electron-builder --mac
+```
+构建Windows版本遇到相同问题也可以按照以上步骤操作。
 
 
-## License
+### 构建Windows版本 
 
-MIT
+Windows 的 .exe 可以在 Windows 本地构建，也可以在 Linux/Mac 下跨平台构建。但如果在非 Windows 系统下跨平台构建，可能无法嵌入非标准图标，建议在 Windows 虚拟机或电脑上运行以下命令。
 
-## Star History
+```bash
+# 安装依赖并打包
+npm i
+npm run b
 
-[![Star History Chart](https://api.star-history.com/svg?repos=electerm/electerm&type=Date)](https://www.star-history.com/#electerm/electerm&Date)
+# 构建 Windows 64位安装包 (.exe)
+./node_modules/.bin/electron-builder --win nsis --x64
+
+# 如果需要构建绿色版 (免安装 Zip 压缩包)
+./node_modules/.bin/electron-builder --win zip --x64
+# 最终的安装包和免安绿色版都会输出在项目根目录的 dist/ 文件夹下
+```
+
+***
+
+## 上游代码同步规范 (Git Rebase)
+
+为了确保我们的高颜值重构样式不与原作者的频繁更新产生冲突，请务必使用 **Rebase（变基）** 流程来融合代码：
+
+```bash
+# 1. 关联原作者上游仓库（仅需设置一次）
+git remote add upstream git@github.com:electerm/electerm.git
+git config --global pull.rebase true
+
+# 2. 日常同步流
+git stash                  # 暂存当前未提交的样式改动
+git fetch upstream         # 拉取官方最新代码
+git rebase upstream/master # 将官方代码垫底，把我们的样式提交重放在最顶层
+git stash pop              # 恢复手头改动，并在 VS Code 中处理冲突
+
+```
+
+***
+
+## 开源许可证与鸣谢
+
+- 本项目基于 **[MIT License](https://www.google.com/search?q=LICENSE)** 开源。
+- 核心底层与功能逻辑完全归属于原开源项目 **[electerm/electerm](https://github.com/electerm/electerm)** 及其全体贡献者。
+- 感谢原作者 **[Zhaoxudong](https://github.com/electerm)** 维护了如此优秀的开源终端工具，让视觉重构得以站在巨人的肩膀上。
+

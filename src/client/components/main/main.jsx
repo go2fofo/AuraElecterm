@@ -2,7 +2,7 @@ import { auto } from 'manate/react'
 import { useEffect } from 'react'
 import Layout from '../layout/layout'
 import FileInfoModal from '../sftp/file-info-modal'
-import UpdateCheck from './upgrade'
+// import UpdateCheck from './upgrade'
 import SettingModal from '../setting-panel/setting-modal'
 import MenuBtn from '../sys-menu/menu-btn'
 import TextEditor from '../text-editor/text-editor'
@@ -97,7 +97,7 @@ export default auto(function Index (props) {
     rightPanelTitle,
     rightPanelTab
   } = store
-  const upgradeInfo = deepCopy(store.upgradeInfo)
+  // const upgradeInfo = deepCopy(store.upgradeInfo)
   const cls = classnames({
     loaded: configLoaded,
     'not-webapp': !window.et.isWebApp,
@@ -233,11 +233,11 @@ export default auto(function Index (props) {
         />
         <CustomCss customCss={config.customCss} configLoaded={configLoaded} />
         <TextEditor />
-        <UpdateCheck
+        {/* <UpdateCheck
           skipVersion={config.skipVersion}
           upgradeInfo={upgradeInfo}
           installSrc={installSrc}
-        />
+        /> */}
         <FileInfoModal />
         <SettingModal store={store} />
         <MoveItemModal store={store} />

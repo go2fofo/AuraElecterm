@@ -10,7 +10,7 @@ import {
   BugOutlined,
   HeartOutlined
 } from '@ant-design/icons'
-import { Tabs, Button } from 'antd'
+import { Tabs } from 'antd'
 import Modal from '../common/modal'
 import Link from '../common/external-link'
 import LogoElem from '../common/logo-elem'
@@ -41,18 +41,18 @@ export default auto(function InfoModal (props) {
     if (window.et.isWebApp || checkSkipSrc(props.installSrc)) {
       return null
     }
-    const {
-      onCheckUpdate
-    } = window.store
-    const {
-      upgradeInfo
-    } = props
-    const onCheckUpdating = upgradeInfo.checkingRemoteVersion || upgradeInfo.upgrading
-    const { noUpdateMessage, noUpdateMessageExpires } = upgradeInfo
-    const showMessage = noUpdateMessage && noUpdateMessageExpires && Date.now() < noUpdateMessageExpires
+    // const {
+    //   onCheckUpdate
+    // } = window.store
+    // const {
+    //   upgradeInfo
+    // } = props
+    // const onCheckUpdating = upgradeInfo.checkingRemoteVersion || upgradeInfo.upgrading
+    // const { noUpdateMessage, noUpdateMessageExpires } = upgradeInfo
+    // const showMessage = noUpdateMessage && noUpdateMessageExpires && Date.now() < noUpdateMessageExpires
     return (
       <div className='mg1b mg2t'>
-        <Button
+        {/* <Button
           type='primary'
           loading={onCheckUpdating}
           onClick={() => onCheckUpdate(true)}
@@ -61,7 +61,7 @@ export default auto(function InfoModal (props) {
         </Button>
         {showMessage && (
           <span className='mg1l update-msg'>{noUpdateMessage}</span>
-        )}
+        )} */}
       </div>
     )
   }

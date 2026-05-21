@@ -267,11 +267,11 @@ class MenuBtn extends PureComponent {
       // {
       //   type: 'hr'
       // },
-      {
-        func: 'onCheckUpdate',
-        icon: 'UpCircleOutlined',
-        text: e('checkForUpdate')
-      },
+      // {
+      //   func: 'onCheckUpdate',
+      //   icon: 'UpCircleOutlined',
+      //   text: e('checkForUpdate')
+      // },
       // {
       //   type: 'hr'
       // },

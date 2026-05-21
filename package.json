@@ -1,9 +1,9 @@
 {
-  "name": "electerm",
-  "version": "3.10.5",
+  "name": "aura-electerm",
+  "version": "1.0.0",
   "description": "Terminal/ssh/telnet/serialport/sftp client(linux, mac, win)",
   "main": "app.js",
-  "bin": "npm/electerm",
+  "bin": "npm/aura-electerm",
   "scripts": {
     "app": "node build/bin/app",
     "build": "npm run vite-build",
@@ -136,6 +136,7 @@
     "npm",
     "README.md",
     "LICENSE"
+    
   ],
   "standard": {
     "sourceType": "module",

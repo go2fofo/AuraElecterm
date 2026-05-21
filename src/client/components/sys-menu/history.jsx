@@ -3,11 +3,10 @@
  * @Date: 2026-05-20 15:46:50
  * @LastEditTime: 2026-05-21 10:30:21
  * @LastEditors: fofo
- * @Description: 
+ * @Description:
  * @FilePath: /AuraElecterm/src/client/components/sys-menu/history.jsx
  */
 import HistoryItem from '../sidebar/history-item'
-
 
 export default function HistorySubMenu (props) {
   const { history = [] } = props

@@ -154,9 +154,7 @@ export default function QuickCommandsFooterBox (props) {
     openQuickCommandBar,
     pinnedQuickCommandBar,
     qmSortByFrequency,
-    inActiveTerminal,
-    leftSidebarWidth,
-    openedSideBar
+    inActiveTerminal
   } = props
   if ((!openQuickCommandBar && !pinnedQuickCommandBar) || !inActiveTerminal) {
     return null

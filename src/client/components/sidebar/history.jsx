@@ -3,7 +3,7 @@
  * @Date: 2026-05-20 15:46:50
  * @LastEditTime: 2026-05-20 17:42:47
  * @LastEditors: fofo
- * @Description: 
+ * @Description:
  * @FilePath: /AuraElecterm/src/client/components/sidebar/history.jsx
  */
 /**

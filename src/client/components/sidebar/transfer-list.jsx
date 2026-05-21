@@ -3,7 +3,7 @@
  * @Date: 2026-05-20 15:46:50
  * @LastEditTime: 2026-05-20 16:39:04
  * @LastEditors: fofo
- * @Description: 
+ * @Description:
  * @FilePath: /AuraElecterm/src/client/components/sidebar/transfer-list.jsx
  */
 import { auto } from 'manate/react'

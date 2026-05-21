@@ -32,10 +32,6 @@ export default auto(function Layout (props) {
       width,
       height,
       pinnedQuickCommandBar,
-      // tabsHeight,
-      leftSidebarWidth,
-      // infoPanelPinned,
-      pinned,
       rightPanelVisible,
       rightPanelPinned,
       rightPanelWidth,
@@ -59,11 +55,9 @@ export default auto(function Layout (props) {
       height,
       width,
       pinnedQuickCommandBar,
-      leftSidebarWidth,
       rightPanelVisible,
       rightPanelPinned,
-      rightPanelWidth,
-      pinned
+      rightPanelWidth
     } = props.store
     const l = 0
     const r = rightPanelPinned && rightPanelVisible ? rightPanelWidth : 0

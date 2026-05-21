@@ -61,14 +61,14 @@ class MenuBtn extends PureComponent {
       y: e.clientY - this.state.position.y
     }
     this.setState({ isDragging: true })
-    
+
     document.addEventListener('mousemove', this.handleMouseMove)
     document.addEventListener('mouseup', this.handleMouseUp)
   }
 
   handleMouseMove = (e) => {
     if (!this.state.isDragging) return
-    
+
     // Threshold to distinguish click from drag
     if (!this.hasMoved) {
       this.hasMoved = true
@@ -127,7 +127,6 @@ class MenuBtn extends PureComponent {
     if (this.hasMoved) {
       e.stopPropagation()
       e.preventDefault()
-      return
     }
   }
 
@@ -323,25 +322,27 @@ class MenuBtn extends PureComponent {
   render () {
     const { isFloating } = this.props
     const { isDragging, position, isOpen } = this.state
-    
+
     const isSnapped = isFloating && !isDragging && !isOpen && (
-      position.x <= 20 || 
-      position.x >= window.innerWidth - 60 || 
-      position.y <= 20 || 
+      position.x <= 20 ||
+      position.x >= window.innerWidth - 60 ||
+      position.y <= 20 ||
       position.y >= window.innerHeight - 60
     )
 
     const className = `menu-control ${isFloating ? 'floating-menu-btn' : ''} ${isDragging ? 'dragging' : ''} ${isSnapped ? 'snapped-edge' : ''}`
-    
+
     const pops = {
       className,
       onMouseDown: this.handleMouseDown,
       onClick: this.openMenu,
       title: e('menu'),
-      style: isFloating ? {
-        left: `${position.x}px`,
-        top: `${position.y}px`
-      } : {}
+      style: isFloating
+        ? {
+            left: `${position.x}px`,
+            top: `${position.y}px`
+          }
+        : {}
     }
 
     const placement = this.getPlacement()

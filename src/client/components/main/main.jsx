@@ -92,7 +92,6 @@ export default auto(function Index (props) {
     installSrc,
     fileTransfers,
     uiThemeConfig,
-    transferHistory,
     transferToConfirm,
     openResolutionEdit,
     rightPanelTitle,
@@ -153,28 +152,6 @@ export default auto(function Index (props) {
     themeConfig: store.getUiThemeConfig()
   }
   const copiedTransfer = deepCopy(fileTransfers)
-  const copiedHistory = deepCopy(transferHistory)
-  const sidebarProps = {
-    ...pick(store, [
-      'activeItemId',
-      'history',
-      'showModal',
-      'showInfoModal',
-      'openedSideBar',
-      'height',
-      'settingTab',
-      'settingItem',
-      'isSyncingSetting',
-      'leftSidebarWidth',
-      'transferTab',
-      'sidebarPanelTab',
-      'openWidgetsModal'
-    ]),
-    fileTransfers: copiedTransfer,
-    transferHistory: copiedHistory,
-    upgradeInfo,
-    pinned
-  }
 
   const infoModalProps = {
     ...pick(store, [

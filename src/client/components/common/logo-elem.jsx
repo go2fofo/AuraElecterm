@@ -1,13 +1,12 @@
 /*
  * @Author: fofo
  * @Date: 2026-05-20 15:46:50
- * @LastEditTime: 2026-05-20 17:45:24
+ * @LastEditTime: 2026-05-21 09:56:53
  * @LastEditors: fofo
- * @Description: 
+ * @Description:
  * @FilePath: /AuraElecterm/src/client/components/common/logo-elem.jsx
  */
 import {
-  logoPath1,
   logoPath2,
   logoPath3,
   packInfo

@@ -80,15 +80,6 @@ export default auto(function NoSessionPanel ({ height, onNewTab, onNewSsh, batch
     }
   ]
 
-  const newTabDom = window.store.hasNodePty
-    ? (
-      <div className="home-card" onClick={onNewTab}>
-        <div className="home-card-icon"><PlusCircleOutlined /></div>
-        <div className="home-card-title">{e('newTab')}</div>
-      </div>
-      )
-    : null
-
   const items = [
     {
       key: 'default',
@@ -114,7 +105,7 @@ export default auto(function NoSessionPanel ({ height, onNewTab, onNewSsh, batch
   ]
 
   const dropdownProps = {
-    menu: { 
+    menu: {
       items,
       style: {
         maxHeight: '300px',
@@ -129,27 +120,30 @@ export default auto(function NoSessionPanel ({ height, onNewTab, onNewSsh, batch
       <div className='pd3'>
         <LogoElem />
       </div>
-      
+
       <div className='home-quick-connect pd2'>
         <QuickConnect batch={batch} inputOnly />
       </div>
 
       <div className='home-cards-container'>
         <Dropdown {...dropdownProps}>
-          <div className="home-card">
-            <div className="home-card-icon"><PlusCircleOutlined /></div>
-            <div className="home-card-title">{e('新增')}</div>
+          <div className='home-card'>
+            <div className='home-card-icon'><PlusCircleOutlined /></div>
+            <div className='home-card-title'>{e('新增')}</div>
           </div>
         </Dropdown>
-        {cards.map((card, i) => (
-          <div className="home-card" key={i} onClick={card.onClick}>
-            <div className="home-card-icon">{card.icon}</div>
-            <div className="home-card-title">{card.title}</div>
-          </div>
-        ))}
-        <div className="home-card" onClick={handleCreateAIBookmark}>
-          <div className="home-card-icon"><RobotOutlined /></div>
-          <div className="home-card-title">{e('createBookmarkByAI')}</div>
+        {cards.map((card, i) => {
+          const handleCardClick = card.onClick
+          return (
+            <div className='home-card' key={i} onClick={handleCardClick}>
+              <div className='home-card-icon'>{card.icon}</div>
+              <div className='home-card-title'>{card.title}</div>
+            </div>
+          )
+        })}
+        <div className='home-card' onClick={handleCreateAIBookmark}>
+          <div className='home-card-icon'><RobotOutlined /></div>
+          <div className='home-card-title'>{e('createBookmarkByAI')}</div>
         </div>
       </div>
 

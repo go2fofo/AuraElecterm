@@ -505,7 +505,7 @@ class Tab extends Component {
                 )
               }
               <span className='tab-title'>
-                <span className='iblock mg1r tab-count' style={styleTag}>{tabCount}</span>
+                {/* <span className='iblock mg1r tab-count' style={styleTag}>{tabCount}</span> */}
                 <span className='mg1r'>{title}</span>
               </span>
             </div>

@@ -44,7 +44,7 @@ export const extraTabWidth = 113
 
 export const tabWidth = 160
 
-export const tabMargin = 1
+export const tabMargin = 8
 
 export const fileTypeMap = {
   link: 'l',

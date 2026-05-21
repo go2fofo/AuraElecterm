@@ -1,9 +1,10 @@
 
 .tabs
   position relative
-  height 36px
-  overflow hidden
-  background var(--main-dark)
+  height 48px
+  overflow visible
+  background transparent
+  padding 6px 0
   z-index 12
   ::-webkit-scrollbar
     width 0
@@ -22,28 +23,36 @@
 .tabs-inner
   position relative
   z-index 2
-  padding 0
+  padding 0 8px
   margin-top 0
-  display inline-block
-  height 36px
-  overflow-x scroll
-  overflow-y hidden
+  display flex
+  align-items center
+  height 100%
+  overflow-x auto
+  overflow-y visible
 
 .tabs-wrapper
   z-index 3
+  display flex
+  align-items center
+  gap 8px
+
 .tab
-  display inline-block
-  vertical-align middle
+  display inline-flex
+  align-items center
+  justify-content center
   cursor pointer
   position relative
-  padding 0 14px
-  min-width 100px
-  max-width 200px
+  padding 0 16px
+  min-width 120px
+  max-width 220px
+  height 36px
   line-height 36px
-  margin 0 1px 0 0
-  border-radius 3px 3px 0 0
+  border-radius 8px
   background var(--main-dark)
-  text-align center
+  box-shadow 0 2px 4px rgba(0, 0, 0, 0.1)
+  border 1px solid transparent
+  transition all 0.2s ease
   color var(--text-dark)
   &.tab-last
     margin-right 5px
@@ -52,12 +61,15 @@
   &.active
     color var(--text)
     background var(--main)
+    border-color var(--primary)
+    box-shadow 0 4px 8px rgba(0, 0, 0, 0.15)
   &.active-all
     font-weight bold
     .tab-count
       border-radius 15px
       font-weight bold
   &:hover
+    background var(--main)
     .tab-close
       display block
   &.dragover-tab::after
@@ -140,11 +152,25 @@
     color var(--text-light)
 .tabs-extra
   position absolute
-  height 40px
+  height 48px
   top 0
   right 0
-  line-height 40px
+  line-height 48px
   z-index 20
+  display flex
+  align-items center
+  padding 0 8px
+  gap 8px
+
+  .control-icon-wrap
+    display inline-flex
+    align-items center
+    justify-content center
+    height 28px
+    cursor pointer
+    color var(--text-light)
+    &:hover
+      color var(--text)
 
   .tabs-dd-icon
     font-size 12px

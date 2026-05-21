@@ -1,3 +1,11 @@
+/*
+ * @Author: fofo
+ * @Date: 2026-05-20 15:46:50
+ * @LastEditTime: 2026-05-20 17:42:47
+ * @LastEditors: fofo
+ * @Description: 
+ * @FilePath: /AuraElecterm/src/client/components/sidebar/history.jsx
+ */
 /**
  * history select
  */
@@ -55,12 +63,16 @@ export default auto(function HistoryPanel (props) {
       className='sidebar-panel-history'
     >
       <div className='history-header pd2x pd2b'>
-        <Switch
-          {...switchProps}
-        />
-        <UnorderedListOutlined
-          {...clearIconProps}
-        />
+        <span className='w500'>{e('history')}</span>
+        <div style={{ marginLeft: 'auto' }}>
+          <Switch
+            {...switchProps}
+            className='mg1r'
+          />
+          <UnorderedListOutlined
+            {...clearIconProps}
+          />
+        </div>
       </div>
       <div className='history-body'>
         {

@@ -107,7 +107,7 @@ function buildConfig (config, filter = d => d) {
   }, {})
 }
 
-function buildConfigForSearch (config) {
+function buildConfigForSearch (config = {}) {
   const defs = shortcutsDefaultsGen()
   const { shortcuts = {} } = config
   return defs.reduce((p, c) => {
@@ -252,10 +252,11 @@ export function shortcutExtend (Cls) {
 
 export function shortcutDescExtend (Cls) {
   Cls.prototype.getShortcut = function (name) {
-    const shortcutsConfig = buildConfigForSearch(this.props.config)
+    const config = this.props && this.props.config ? this.props.config : (window.store ? window.store.config : {})
+    const shortcutsConfig = buildConfigForSearch(config)
     const propName = isMacJs ? 'shortcutMac' : 'shortcut'
     const n = `${name}_${propName}`
-    return shortcutsConfig[n].shortcut
+    return shortcutsConfig[n] ? shortcutsConfig[n].shortcut : ''
   }
   return Cls
 }

@@ -182,7 +182,7 @@ export default function QuickCommandsFooterBox (props) {
     : 'text'
   const cls = classNames('qm-list-wrap')
   const type = qmSortByFrequency ? 'primary' : 'default'
-  const w = openedSideBar ? 43 + leftSidebarWidth : 43
+  const w = 0
   const qmProps = {
     className: 'qm-wrap-tooltip',
     style: {

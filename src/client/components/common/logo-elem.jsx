@@ -1,3 +1,11 @@
+/*
+ * @Author: fofo
+ * @Date: 2026-05-20 15:46:50
+ * @LastEditTime: 2026-05-20 17:45:24
+ * @LastEditors: fofo
+ * @Description: 
+ * @FilePath: /AuraElecterm/src/client/components/common/logo-elem.jsx
+ */
 import {
   logoPath1,
   logoPath2,
@@ -14,9 +22,9 @@ export default function LogoElem () {
         <img src={logoPath2} className='iblock mwm-100 mg1l mg1r logo-filter logo-img' />
       </span>
       <img src={logoPath3} className='hide logo-img' />
-      <sup>
+      {/* <sup>
         <img src={logoPath1} className='iblock mwm-100 mg1r logo-img-small' />
-      </sup>
+      </sup> */}
       <Tag color='#08c' variant='solid'>{packInfo.version}</Tag>
     </h1>
   )

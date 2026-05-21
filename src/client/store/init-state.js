@@ -197,7 +197,7 @@ export default () => {
     hasNodePty: window.pre.runSync('nodePtyCheck'),
     fullscreen: false,
     hideDelKeyTip: ls.getItem(dismissDelKeyTipLsKey) === 'y',
-    tabsHeight: 36,
+    tabsHeight: 48,
 
     // widgets
     widgets: [],

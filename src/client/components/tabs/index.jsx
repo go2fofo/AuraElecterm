@@ -27,6 +27,7 @@ import WindowControl from './window-control'
 import AddBtn from './add-btn'
 import AppDrag from './app-drag'
 import NoSession from './no-session'
+import TransferList from '../sidebar/transfer-list'
 import classNames from 'classnames'
 
 export default class Tabs extends Component {
@@ -43,9 +44,11 @@ export default class Tabs extends Component {
     const {
       tabsRef
     } = this
-    tabsRef.current.addEventListener('wheel', this.handleWheelEvent, {
-      passive: false
-    })
+    if (tabsRef.current) {
+      tabsRef.current.addEventListener('wheel', this.handleWheelEvent, {
+        passive: false
+      })
+    }
   }
 
   componentDidUpdate (prevProps) {
@@ -120,6 +123,9 @@ export default class Tabs extends Component {
   }
 
   adjustScroll = () => {
+    if (!this.domRef.current) {
+      return
+    }
     const { tabs, currentBatchTabId, batch } = this.props
     const index = tabs.findIndex(t => t.id === currentBatchTabId)
     const tabsDomWith = Array.from(
@@ -139,6 +145,9 @@ export default class Tabs extends Component {
   }
 
   handleScrollLeft = () => {
+    if (!this.domRef.current) {
+      return
+    }
     let { scrollLeft } = this.domRef.current
     scrollLeft = scrollLeft - tabMargin - tabWidth
     if (scrollLeft < 0) {
@@ -148,6 +157,9 @@ export default class Tabs extends Component {
   }
 
   handleScrollRight = () => {
+    if (!this.domRef.current) {
+      return
+    }
     let { scrollLeft } = this.domRef.current
     scrollLeft = scrollLeft + tabMargin + tabWidth
     if (scrollLeft < 0) {
@@ -189,14 +201,17 @@ export default class Tabs extends Component {
   }
 
   renderNoExtra () {
+    const showGlobalControls = this.shouldRenderWindowControl()
     return (
       <div className='tabs-extra pd1x'>
+        {showGlobalControls && <TransferList store={window.store} />}
         {this.renderLayoutMenu()}
       </div>
     )
   }
 
   renderExtra () {
+    const showGlobalControls = this.shouldRenderWindowControl()
     const items = this.props.tabs.map((t, i) => {
       return {
         key: i + '##' + t.id,
@@ -215,6 +230,7 @@ export default class Tabs extends Component {
     }
     return (
       <div className='tabs-extra pd1x'>
+        {showGlobalControls && <TransferList store={window.store} />}
         {this.renderAddBtn()}
         <LeftOutlined
           className='mg1l iblock pointer font12 tab-scroll-icon'
@@ -384,7 +400,6 @@ export default class Tabs extends Component {
     if (!tabs || !tabs.length) {
       return (
         <div className='tabs-outer'>
-          {this.renderTabs()}
           {this.renderNoSession()}
         </div>
       )

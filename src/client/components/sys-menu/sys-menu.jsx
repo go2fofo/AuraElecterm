@@ -75,7 +75,7 @@ export default class ContextMenu extends PureComponent {
       submenu
     } = item
     if (type === 'hr') {
-      return <hr />
+      return <hr key={`context-item-hr-${i}`} />
     }
     let baseCls = 'context-item'
     if (module && this.modules[module]) {
@@ -84,7 +84,7 @@ export default class ContextMenu extends PureComponent {
         baseCls = 'context-item zoom-item'
       }
       return (
-        <div className={baseCls}>
+        <div className={baseCls} key={`context-item-module-${i}-${module}`}>
           <Mod {...this.props} />
         </div>
       )

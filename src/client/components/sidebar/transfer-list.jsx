@@ -1,4 +1,12 @@
-import { memo } from 'react'
+/*
+ * @Author: fofo
+ * @Date: 2026-05-20 15:46:50
+ * @LastEditTime: 2026-05-20 16:39:04
+ * @LastEditors: fofo
+ * @Description: 
+ * @FilePath: /AuraElecterm/src/client/components/sidebar/transfer-list.jsx
+ */
+import { auto } from 'manate/react'
 import {
   SwapOutlined
 } from '@ant-design/icons'
@@ -11,12 +19,12 @@ import './transfer.styl'
 
 const e = window.translate
 
-export default memo(function TransferList (props) {
+export default auto(function TransferList (props) {
   const {
     fileTransfers,
     transferTab,
     transferHistory
-  } = props
+  } = window.store
   const len = fileTransfers.length
   if (!len && !transferHistory.length) {
     return null

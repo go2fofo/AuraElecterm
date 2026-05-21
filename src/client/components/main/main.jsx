@@ -4,8 +4,8 @@ import Layout from '../layout/layout'
 import FileInfoModal from '../sftp/file-info-modal'
 import UpdateCheck from './upgrade'
 import SettingModal from '../setting-panel/setting-modal'
+import MenuBtn from '../sys-menu/menu-btn'
 import TextEditor from '../text-editor/text-editor'
-import Sidebar from '../sidebar'
 import CssOverwrite from '../bg/css-overwrite'
 import UiTheme from './ui-theme'
 import CustomCss from '../bg/custom-css.jsx'
@@ -123,6 +123,8 @@ export default auto(function Index (props) {
     store.activeTabId2,
     store.activeTabId3
   ].filter(Boolean) // Remove empty strings
+
+  const isNoSession = store.getTabs().length === 0
 
   const bgTabs = config.terminalBackgroundImagePath === 'index' ||
                   config.terminalBackgroundImagePath === 'randomShape' ||
@@ -265,7 +267,7 @@ export default auto(function Index (props) {
         <div
           id='outside-context'
         >
-          <Sidebar {...sidebarProps} />
+          {!isNoSession ? <MenuBtn store={store} config={config} isFloating /> : null}
           <Layout
             store={store}
           />

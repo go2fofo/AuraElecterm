@@ -70,7 +70,13 @@ class MenuBtn extends PureComponent {
     if (!this.state.isDragging) return
     
     // Threshold to distinguish click from drag
-    this.hasMoved = true
+    if (!this.hasMoved) {
+      this.hasMoved = true
+      // Close popover immediately when dragging starts
+      if (this.state.isOpen) {
+        this.setState({ isOpen: false })
+      }
+    }
 
     let newX = e.clientX - this.dragStartPos.x
     let newY = e.clientY - this.dragStartPos.y
@@ -284,13 +290,30 @@ class MenuBtn extends PureComponent {
     return items
   }
 
-  renderMenu () {
+  getPlacement = () => {
+    const { isFloating } = this.props
+    const { position } = this.state
+    let placement = 'topRight'
+    if (isFloating) {
+      const halfW = window.innerWidth / 2
+      const halfH = window.innerHeight / 2
+      const { x, y } = position
+      if (x < halfW && y < halfH) placement = 'bottomRight'
+      else if (x >= halfW && y < halfH) placement = 'bottomLeft'
+      else if (x < halfW && y >= halfH) placement = 'topRight'
+      else placement = 'topLeft'
+    }
+    return placement
+  }
+
+  renderMenu (placement) {
     const { store } = window
     const rprops = {
       items: this.renderContext(),
       tabs: store.getTabs(),
       config: store.config,
-      history: store.history
+      history: store.history,
+      menuPlacement: placement
     }
     return (
       <MenuRender {...rprops} />
@@ -301,7 +324,14 @@ class MenuBtn extends PureComponent {
     const { isFloating } = this.props
     const { isDragging, position, isOpen } = this.state
     
-    const className = `menu-control ${isFloating ? 'floating-menu-btn' : ''} ${isDragging ? 'dragging' : ''}`
+    const isSnapped = isFloating && !isDragging && !isOpen && (
+      position.x <= 20 || 
+      position.x >= window.innerWidth - 60 || 
+      position.y <= 20 || 
+      position.y >= window.innerHeight - 60
+    )
+
+    const className = `menu-control ${isFloating ? 'floating-menu-btn' : ''} ${isDragging ? 'dragging' : ''} ${isSnapped ? 'snapped-edge' : ''}`
     
     const pops = {
       className,
@@ -313,12 +343,16 @@ class MenuBtn extends PureComponent {
         top: `${position.y}px`
       } : {}
     }
+
+    const placement = this.getPlacement()
+
     const popProps = {
-      content: this.renderMenu(),
+      content: this.renderMenu(placement),
       open: isOpen,
       onOpenChange: this.handleOpenChange,
-      placement: 'topRight',
-      trigger: ['click']
+      placement,
+      trigger: ['click'],
+      overlayClassName: 'sys-menu-popover'
     }
     return (
       <Popover {...popProps}>

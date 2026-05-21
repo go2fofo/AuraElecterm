@@ -149,7 +149,14 @@ export default class ContextMenu extends PureComponent {
   }
 
   render () {
-    const cls = 'context-menu'
+    const { menuPlacement } = this.props
+    // If the main menu is placed on the left side (e.g. bottomLeft, topLeft), 
+    // it means the button is on the right side of the screen.
+    // Thus, the sub-menus should expand to the LEFT.
+    const isLeft = menuPlacement && menuPlacement.toLowerCase().includes('left')
+    const cls = classnames('context-menu', {
+      'placement-left': isLeft
+    })
     const innerProps = {
       className: 'context-menu-inner'
     }
